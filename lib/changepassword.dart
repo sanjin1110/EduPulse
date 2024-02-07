@@ -1,12 +1,13 @@
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'changepassword_model.dart';
+
 export 'changepassword_model.dart';
 
 class ChangepasswordWidget extends StatefulWidget {
@@ -69,7 +70,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                   color: FlutterFlowTheme.of(context).primaryText),
               automaticallyImplyLeading: true,
               title: Align(
-                alignment: AlignmentDirectional(0, 0),
+                alignment: const AlignmentDirectional(0, 0),
                 child: Text(
                   'Change Password',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -79,7 +80,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                       ),
                 ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 2,
             )
@@ -94,14 +95,15 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 50, 16, 16),
-                      child: Container(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16, 50, 16, 16),
+                      child: SizedBox(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.passwordController1,
                           focusNode: _model.passwordFocusNode1,
                           autofocus: true,
-                          autofillHints: [AutofillHints.password],
+                          autofillHints: const [AutofillHints.password],
                           obscureText: !_model.passwordVisibility1,
                           decoration: InputDecoration(
                             labelText: 'Password',
@@ -109,41 +111,41 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                                 .labelLarge
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF57636C),
+                                  color: const Color(0xFF57636C),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                 ),
                             hintText: '*****',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFF1F4F8),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF4B39EF),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             filled: true,
-                            fillColor: Color(0xFFF1F4F8),
+                            fillColor: const Color(0xFFF1F4F8),
                             suffixIcon: InkWell(
                               onTap: () => setState(
                                 () => _model.passwordVisibility1 =
@@ -154,7 +156,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                                 _model.passwordVisibility1
                                     ? Icons.visibility_outlined
                                     : Icons.visibility_off_outlined,
-                                color: Color(0xFF57636C),
+                                color: const Color(0xFF57636C),
                                 size: 24,
                               ),
                             ),
@@ -162,7 +164,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF101213),
+                                    color: const Color(0xFF101213),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -173,14 +175,15 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                      child: Container(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: SizedBox(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.passwordController2,
                           focusNode: _model.passwordFocusNode2,
                           autofocus: true,
-                          autofillHints: [AutofillHints.password],
+                          autofillHints: const [AutofillHints.password],
                           obscureText: !_model.passwordVisibility2,
                           decoration: InputDecoration(
                             labelText: 'Confirm Password',
@@ -188,41 +191,41 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                                 .labelLarge
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF57636C),
+                                  color: const Color(0xFF57636C),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                 ),
                             hintText: '*****',
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFF1F4F8),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFF4B39EF),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0xFFFF5963),
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             filled: true,
-                            fillColor: Color(0xFFF1F4F8),
+                            fillColor: const Color(0xFFF1F4F8),
                             suffixIcon: InkWell(
                               onTap: () => setState(
                                 () => _model.passwordVisibility2 =
@@ -233,7 +236,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                                 _model.passwordVisibility2
                                     ? Icons.visibility_outlined
                                     : Icons.visibility_off_outlined,
-                                color: Color(0xFF57636C),
+                                color: const Color(0xFF57636C),
                                 size: 24,
                               ),
                             ),
@@ -241,7 +244,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF101213),
+                                    color: const Color(0xFF101213),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -252,7 +255,8 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 424, 16, 16),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16, 424, 16, 16),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pushNamed('Profile');
@@ -261,10 +265,11 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 44,
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           iconPadding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                          color: Color(0xFF4B39EF),
+                              const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          color: const Color(0xFF4B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Plus Jakarta Sans',
@@ -273,7 +278,7 @@ class _ChangepasswordWidgetState extends State<ChangepasswordWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1,
                           ),
