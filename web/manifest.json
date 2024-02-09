@@ -1,6 +1,6 @@
 {
-    "name": "edupulse",
-    "short_name": "edupulse",
+    "name": "education_app",
+    "short_name": "education_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
