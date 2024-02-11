@@ -1,8 +1,10 @@
 import 'package:education_app/constants/color.dart';
-import 'package:education_app/constants/icons.dart';
-import 'package:education_app/constants/size.dart';
 import 'package:education_app/screens/featuerd_screen.dart';
+import 'package:education_app/screens/my_courses.dart';
+import 'package:education_app/screens/profile.dart';
+import 'package:education_app/screens/saved_courses.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -12,77 +14,112 @@ class BaseScreen extends StatefulWidget {
 }
 
 class _BaseScreenState extends State<BaseScreen> {
-  int _selectedIndex = 0;
+  int currentTab = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> screens = <Widget>[
     FeaturedScreen(),
-    FeaturedScreen(),
-    FeaturedScreen(),
-    FeaturedScreen(),
+    SavedCourse(),
+    MyCoursePage(),
+    MyProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        height: 70,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () => setState(() {
+                  currentTab = 0;
+                }),
+                child: Column(
+                  children: [
+                    Icon(
+                      currentTab == 0 ? Iconsax.home4 : Iconsax.home4,
+                      color: currentTab == 0 ? kPrimaryColor : Colors.grey,
+                    ),
+                    Text(
+                      "Home",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: currentTab == 0 ? kPrimaryColor : Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () => setState(() {
+                  currentTab = 1;
+                }),
+                child: Column(
+                  children: [
+                    Icon(
+                      currentTab == 1 ? Iconsax.save_21 : Iconsax.save_21,
+                      color: currentTab == 1 ? kPrimaryColor : Colors.grey,
+                    ),
+                    Text(
+                      "Saved",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: currentTab == 1 ? kPrimaryColor : Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () => setState(() {
+                  currentTab = 2;
+                }),
+                child: Column(
+                  children: [
+                    Icon(
+                      currentTab == 2 ? Iconsax.book_14 : Iconsax.book_14,
+                      color: currentTab == 2 ? kPrimaryColor : Colors.grey,
+                    ),
+                    Text(
+                      "My Course",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: currentTab == 2 ? kPrimaryColor : Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () => setState(() {
+                  currentTab = 3;
+                }),
+                child: Column(
+                  children: [
+                    Icon(
+                      currentTab == 3
+                          ? Iconsax.profile_tick
+                          : Iconsax.profile_tick,
+                      color: currentTab == 3 ? kPrimaryColor : Colors.grey,
+                    ),
+                    Text(
+                      "Profile",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: currentTab == 3 ? kPrimaryColor : Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: kPrimaryColor,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          items: [
-            BottomNavigationBarItem(
-              activeIcon: Image.asset(
-                icFeatured,
-                height: kBottomNavigationBarItemSize,
-              ),
-              icon: Image.asset(
-                icFeaturedOutlined,
-                height: kBottomNavigationBarItemSize,
-              ),
-              label: "Featured",
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Image.asset(
-                icLearning,
-                height: kBottomNavigationBarItemSize,
-              ),
-              icon: Image.asset(
-                icLearningOutlined,
-                height: kBottomNavigationBarItemSize,
-              ),
-              label: "My Learning",
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Image.asset(
-                icWishlist,
-                height: kBottomNavigationBarItemSize,
-              ),
-              icon: Image.asset(
-                icWishlistOutlined,
-                height: kBottomNavigationBarItemSize,
-              ),
-              label: "Wishlist",
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Image.asset(
-                icSetting,
-                height: kBottomNavigationBarItemSize,
-              ),
-              icon: Image.asset(
-                icSettingOutlined,
-                height: kBottomNavigationBarItemSize,
-              ),
-              label: "Settings",
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: (int index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          }),
+      body: screens[currentTab],
     );
   }
 }

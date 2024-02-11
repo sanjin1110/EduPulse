@@ -1,4 +1,4 @@
-import 'package:education_app/screens/base_screen.dart';
+import 'package:education_app/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const BaseScreen(),
+      home: const LoginWidget(),
     );
   }
 }

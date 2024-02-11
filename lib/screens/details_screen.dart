@@ -4,7 +4,6 @@ import 'package:education_app/models/lesson.dart';
 import 'package:education_app/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:video_player/video_player.dart';
 
 import '../widgets/lesson_card.dart';
 
@@ -45,7 +44,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     children: [
                       Align(
                         child: Text(
-                          "Flutter",
+                          "Introduction",
                           style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ),

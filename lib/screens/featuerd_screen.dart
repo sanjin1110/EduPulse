@@ -1,12 +1,11 @@
-import 'package:education_app/constants/color.dart';
 import 'package:education_app/constants/size.dart';
 import 'package:education_app/models/category.dart';
 import 'package:education_app/screens/course_screen.dart';
-import 'package:education_app/screens/details_screen.dart';
 import 'package:education_app/widgets/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../widgets/quick_and_fast_list.dart';
 import '../widgets/search_testfield.dart';
 
 class FeaturedScreen extends StatefulWidget {
@@ -19,11 +18,11 @@ class FeaturedScreen extends StatefulWidget {
 class _FeaturedScreenState extends State<FeaturedScreen> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
+    return const AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         body: Column(
-          children: const [
+          children: [
             AppBar(),
             Body(),
           ],
@@ -38,50 +37,47 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Explore Categories",
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "See All",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: kPrimaryColor),
+    return Expanded(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const QuickAndFastList(),
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Popular Category",
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-              )
-            ],
+              ],
+            ),
           ),
-        ),
-        GridView.builder(
-          shrinkWrap: true,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 8,
+          Expanded(
+            child: GridView.builder(
+              shrinkWrap: true,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 8,
+              ),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.8,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 24,
+              ),
+              itemBuilder: (context, index) {
+                return CategoryCard(
+                  category: categoryList[index],
+                );
+              },
+              itemCount: categoryList.length,
+            ),
           ),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.8,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 24,
-          ),
-          itemBuilder: (context, index) {
-            return CategoryCard(
-              category: categoryList[index],
-            );
-          },
-          itemCount: categoryList.length,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -173,7 +169,7 @@ class AppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Hello,\nGood Morning",
+                "Welcome Sanjin,\nLet's Start Learning",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               CircleButton(

@@ -14,39 +14,39 @@ class Course {
 
 List<Course> courses = [
   Course(
-    author: "DevWheels",
-    completedPercentage: .75,
+    author: "Mac Jon",
+    completedPercentage: 6,
     name: "Flutter Novice to Ninja",
     thumbnail: "assets/icons/flutter.jpg",
   ),
   Course(
-    author: "DevWheels",
-    completedPercentage: .60,
+    author: "Ram KC",
+    completedPercentage: 10,
     name: "React Novice to Ninja",
     thumbnail: "assets/icons/react.jpg",
   ),
   Course(
-    author: "DevWheels",
-    completedPercentage: .75,
-    name: "Node - The complete guide",
+    author: "Manoj",
+    completedPercentage: 15,
+    name: "NodeJs complete guide",
     thumbnail: "assets/icons/node.png",
   ),
   Course(
-    author: "DevWheels",
-    completedPercentage: .75,
+    author: "Shikhar",
+    completedPercentage: 85,
     name: "Flutter Novice to Ninja",
     thumbnail: "assets/icons/flutter.jpg",
   ),
   Course(
-    author: "DevWheels",
-    completedPercentage: .60,
+    author: "Nitesh ",
+    completedPercentage: 10,
     name: "React Novice to Ninja",
     thumbnail: "assets/icons/react.jpg",
   ),
   Course(
-    author: "DevWheels",
-    completedPercentage: .75,
-    name: "Node - The complete guide",
+    author: "Sabin",
+    completedPercentage: 20,
+    name: "NodeJs complete guide",
     thumbnail: "assets/icons/node.png",
   ),
 ];
